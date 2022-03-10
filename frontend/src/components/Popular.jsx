@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 
 function Popular() {
-  
   useEffect(() => {
     getPopular();
   }, []);
@@ -10,8 +9,9 @@ function Popular() {
     const api = await fetch(
       `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=15`
     );
-    const data = await api.json();
 
+    const data = await api.json();
+    //console.log(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=15`);
     console.log(data);
   };
 
