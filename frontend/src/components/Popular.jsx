@@ -57,15 +57,20 @@ function Popular() {
 
 const Wrapper = styled.div`
   margin: 4rem 0rem;
+  h3 {
+    margin:1rem;
+  }
 `;
 const Card = styled.div`
-  min-height: 24rem;
+  min-height: 25rem;
   border-radius: 2rem;
   overflow: hidden;
   position: relative;
+  margin:1rem;
+  cursor: pointer;
 
   img {
-    border-radius: 1rem;
+    border-radius: 2rem;
     position: absolute;
     left: 0;
     height: 100%;
@@ -82,8 +87,9 @@ const Card = styled.div`
     width: 100%;
     text-align: center;
     font-weight: 600;
-    font-size: 1 rem;
-    height: 20%;
+    height: 25%;
+    font-size:1.3rem;
+    letter-spacing:1px;
     disple: flex;
     justify-content: center;
     align-items: center;
