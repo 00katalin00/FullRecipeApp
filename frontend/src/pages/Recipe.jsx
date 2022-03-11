@@ -26,7 +26,6 @@ function Recipe() {
     fetchDetails();
   }, [params.name]);
 
-  console.log(details.extendedIngredients);
   return (
     <DetailWrapper>
       <div>
@@ -59,7 +58,7 @@ function Recipe() {
         {activeTab === "Ingredientes" && (
           <ul>
             {details.extendedIngredients.map((x) => (
-              <li key={x.id}>{x.original}</li>
+              <li key={x.id + 'v'}>{x.original}</li>
             ))}
           </ul>
         )}
