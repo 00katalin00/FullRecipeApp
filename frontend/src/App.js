@@ -21,19 +21,20 @@ function App() {
 }
 const Logo = styled(Link)`
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 2.3rem;
   font-weight: 400;
   font-family: "Lobster Two", cursive;
 `;
 
 const Nav = styled.div`
-  padding: 4rem 0rem;
+  padding: 2rem 0rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 
   svg {
-    font-size: 2rem;
+    font-size: 5rem;
+    color: rgb(109, 107, 107);
   }
 `;
 export default App;
