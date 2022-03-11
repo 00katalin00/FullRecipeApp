@@ -28,7 +28,12 @@ function Searched() {
   };
 
   return (
-    <Grid>
+    <Grid
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+    >
       {serach.map((item) => {
         return (
           <Card key={item.id}>
@@ -43,7 +48,7 @@ function Searched() {
   );
 }
 
-const Grid = styled.div`
+const Grid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
   grid-gap: 3rem;

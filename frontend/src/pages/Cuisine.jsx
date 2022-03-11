@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
 
 function Cuisine() {
@@ -33,13 +32,18 @@ function Cuisine() {
   }, []);
 
   return (
-    <Grid>
+    <Grid
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+    >
       {cuisine.map((item) => {
         return (
           <Card key={item.id}>
             <Link to={"/recipe/" + item.id}>
-            <img src={item.image} alt={item.title} />
-            <h4>{item.title}</h4>
+              <img src={item.image} alt={item.title} />
+              <h4>{item.title}</h4>
             </Link>
           </Card>
         );
@@ -48,14 +52,7 @@ function Cuisine() {
   );
 }
 
-const Wrapper = styled.div`
-  margin: 4rem 0rem;
-  h3 {
-    margin: 1rem;
-  }
-`;
-
-const Grid = styled.div`
+const Grid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
   grid-gap: 3rem;

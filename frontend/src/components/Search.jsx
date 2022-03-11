@@ -9,12 +9,13 @@ function Search() {
 
   const submitHanddler = (e) => {
     e.preventDefault();
-    navigate('/searched/'+ input);
+    navigate("/searched/" + input);
+    setInput('');
   };
 
   return (
-    <FormStyle onSubmit={submitHanddler}>
-      <div>
+    <Container>
+      <FormStyle onSubmit={submitHanddler}>
         <FaSearch />
         <input
           onChange={(e) => setInput(e.target.value)}
@@ -22,18 +23,21 @@ function Search() {
           value={input}
           placeholder="..."
         />
-      </div>
-    </FormStyle>
+      </FormStyle>
+    </Container>
   );
 }
 
-const FormStyle = styled.form`
-  margin: 0rem 20rem;
+const Container = styled.div`
+  text-align: center;
+  display: flex;
+  justify-content: center;
+`;
 
-  div {
-    position: relative;
-    width: 100%;
-  }
+const FormStyle = styled.form`
+  margin: 0rem 0rem;
+  position: relative;
+  width: 70%;
 
   input {
     border: none;

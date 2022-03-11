@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 function Recipe() {
   let params = useParams();
@@ -27,7 +28,12 @@ function Recipe() {
   }, [params.name]);
 
   return (
-    <DetailWrapper>
+    <DetailWrapper
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+    >
       <div>
         <h2>{details.title}</h2>
         <img src={details.image} alt={details.title} />
@@ -46,21 +52,31 @@ function Recipe() {
           Ingredientes
         </Button>
         {activeTab === "Instruciones" && (
-          <div>
+          <motion.div
+            animate={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
             <CustomLabel
               dangerouslySetInnerHTML={{ __html: details.summary }}
             ></CustomLabel>
             <CustomLabel
               dangerouslySetInnerHTML={{ __html: details.instructions }}
             ></CustomLabel>
-          </div>
+          </motion.div>
         )}
         {activeTab === "Ingredientes" && (
-          <ul>
+          <motion.ul
+            animate={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
             {details.extendedIngredients.map((x) => (
-              <li key={x.id + 'v'}>{x.original}</li>
+              <li key={x.id + "v"}>{x.original}</li>
             ))}
-          </ul>
+          </motion.ul>
         )}
       </Info>
     </DetailWrapper>
@@ -74,7 +90,7 @@ const CustomLabel = styled.p`
   line-height: 1.2rem;
   letter-spacing: 0.1rem;
 `;
-const DetailWrapper = styled.div`
+const DetailWrapper = styled(motion.div)`
   margin-top: 10rem;
   margin-bottom: 5rem;
   display: flex;

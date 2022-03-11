@@ -1,5 +1,4 @@
-import { motion } from "framer-motion";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import "@splidejs/splide/dist/css/splide.min.css";
