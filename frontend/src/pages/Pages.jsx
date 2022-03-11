@@ -1,7 +1,7 @@
 import Home from "./Home";
 import Cuisine from "./Cuisine";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-
+import Searched from "./Searched";
 function Pages() {
   return (
     <Routes>
@@ -10,6 +10,7 @@ function Pages() {
       <Route path="/american/:type" element={<Cuisine />} />
       <Route path="/thai/:type" element={<Cuisine />} />
       <Route path="/japanese/:type" element={<Cuisine />} />
+      <Route path="/searched/:search" element={<Searched />} />
     </Routes>
   );
 }
