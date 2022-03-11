@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-
 import "@splidejs/splide/dist/css/splide.min.css";
 
 function Random() {
@@ -34,8 +33,10 @@ function Random() {
         {random.map((item) => {
           return (
             <Card key={item.id}>
+              <Link to={"/recipe/" + item.id}>
               <img src={item.image} alt={item.title} />
               <h4>{item.title}</h4>
+              </Link>
             </Card>
           );
         })}

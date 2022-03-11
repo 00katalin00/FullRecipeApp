@@ -1,16 +1,13 @@
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 function Searched() {
   const [serach, setSearch] = useState([]);
 
   let params = useParams();
 
- /* useEffect(() => {
-    getSearch(params.search);
-  }, []);
-*/
   useEffect(() => {
     getSearch(params.search);
   }, [params.search]);

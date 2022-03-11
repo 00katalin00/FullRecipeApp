@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
 
@@ -43,9 +43,11 @@ function Veggie() {
           return (
             <SplideSlide key={v.id}>
               <Card>
-                <p>{v.title}</p>
-                <img src={v.image} alt={v.title} />
-                <Gradient />
+                <Link to={"/recipe/" + v.id}>
+                  <p>{v.title}</p>
+                  <img src={v.image} alt={v.title} />
+                  <Gradient />
+                </Link>
               </Card>
             </SplideSlide>
           );
